@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     private int _scoreValue;
     private int _livesValue;
 
+    [SerializeField]
+    private AudioSource _gameOverSound;
 
     // PUBLIC ACCESS METHODS
     public int ScoreValue
@@ -86,6 +88,7 @@ public class GameController : MonoBehaviour
         this.LivesLabel.gameObject.SetActive(false);
         this.ScoreLabel.gameObject.SetActive(false);
         this.RestartButton.gameObject.SetActive (true);
+        this._gameOverSound.Play();
     }
 
     // PUBLIC METHODS

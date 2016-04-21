@@ -38,6 +38,7 @@ public class HeroController : MonoBehaviour {
 	private AudioSource _jumpSound;
 	private AudioSource _coinSound;
 	private AudioSource _hurtSound;
+    private AudioSource _backgroundSound;
 
 	// Use this for initialization
 	void Start () {
@@ -54,9 +55,13 @@ public class HeroController : MonoBehaviour {
 
 		// Setup AudioSources
 		this._audioSources = gameObject.GetComponents<AudioSource>();
-		this._jumpSound = this._audioSources [0];
-		this._coinSound = this._audioSources [1];
-		this._hurtSound = this._audioSources [2];
+		this._jumpSound = this._audioSources [3];
+		this._coinSound = this._audioSources [2];
+		this._hurtSound = this._audioSources [1];
+        this._backgroundSound = this._audioSources [0];
+
+        // Background Sound Play
+        this._backgroundSound.Play();
 
 		// place the hero in the starting position
 		this._spawn ();
